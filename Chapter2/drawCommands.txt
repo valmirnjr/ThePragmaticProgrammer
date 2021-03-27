@@ -1,0 +1,12 @@
+P 2 # select pen 2
+D   # pen down
+W 2 # draw west 2cm
+N 1 # then north 1cm
+E 2 # then east 2cm
+S 1 # then back south
+U   # pen up
+P 5 # select pen 5
+D   # pen down
+W 3 # draw west 3cm
+N 8 # then north 8cm
+U   # pen up
