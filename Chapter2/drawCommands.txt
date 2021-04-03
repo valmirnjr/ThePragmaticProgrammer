@@ -1,12 +1,64 @@
-P 2 # select pen 2
-D   # pen down
-W 2 # draw west 2cm
-N 1 # then north 1cm
-E 2 # then east 2cm
-S 1 # then back south
-U   # pen up
-P 5 # select pen 5
-D   # pen down
-W 3 # draw west 3cm
-N 8 # then north 8cm
-U   # pen up
+P -2
+SP -105 0
+D
+N 100
+E 60
+S 100
+W 60
+U
+
+P -1
+SP -70 0
+D
+N 60
+U
+N 15
+DP
+U
+
+P 1   # select pen
+D     # pen down
+N 100 # Draw an A
+W 75  
+S 100 
+U     # pen up
+N 50
+D
+E 75
+U
+
+P 2      # select pen
+SP 110 0 # Set position to 110
+D        # pen down
+N 75     # Draw an n
+S 15
+W 60
+S 60
+U
+
+P 3
+SP 265 60
+D
+E 60
+S 60
+W 60
+N 100
+U
+
+P 4
+SP 300 0
+D        # pen down
+N 75     # Draw an r
+S 15
+W 60
+U
+
+P 5
+SP 455 0
+D        # pen down
+E 60     # Draw an e
+N 75
+W 60
+S 25
+E 60
+U
