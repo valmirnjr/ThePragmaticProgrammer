@@ -6,11 +6,6 @@ import re
 class Pen:
   def __init__(self, id, color='black', speed=5):
     self.id = id
-    self.position = {
-      'x': 0,
-      'y': 0,
-      'z': 1
-    }
     self.turtle = Turtle()
     self.turtle.up()
     self.turtle.speed(speed)
@@ -31,12 +26,10 @@ class GraphicSystem:
     self.current_pen = self.pens.setdefault(pen_id, Pen(pen_id))
   
   def movePenDown(self):
-    self.current_pen.position['z'] = 0
     self.current_pen.turtle.down()
     print('Moved down')
   
   def movePenUp(self):
-    self.current_pen.position['z'] = 1
     self.current_pen.turtle.up()
     self.current_pen.turtle.hideturtle()
   
@@ -45,25 +38,21 @@ class GraphicSystem:
     self.current_pen.turtle.forward(dist)
 
   def movePenNorth(self, dist):
-    self.current_pen.position['y'] += dist
     self.current_pen.turtle.setheading(90)
     self.current_pen.turtle.forward(dist)
     print('Moved North')
 
   def movePenSouth(self, dist):
-    self.current_pen.position['y'] -= dist
     self.current_pen.turtle.setheading(270)
     self.current_pen.turtle.forward(dist)
     print('Moved South')
   
   def movePenEast(self, dist):
-    self.current_pen.position['x'] += dist
     self.current_pen.turtle.setheading(180)
     self.current_pen.turtle.forward(dist)
     print('Moved East')
 
   def movePenWest(self, dist):
-    self.current_pen.position['x'] -= dist
     self.current_pen.turtle.setheading(0)
     self.current_pen.turtle.forward(dist)
     print('Moved West')
@@ -76,8 +65,8 @@ class GraphicSystem:
 
   def getPositionOfPen(self, pen_id=None):
     if pen_id:
-      return self.pens[pen_id].position
-    return self.current_pen.position
+      return self.pens[pen_id].turtle.position
+    return self.current_pen.turtle.position
 
   def holdScreen(self):
     self.screen.exitonclick()
